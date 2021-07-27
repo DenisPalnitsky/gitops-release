@@ -15,7 +15,7 @@ Add this to github acion:
 
 ```
       - name: update gitops
-        uses: denispalnitsky/gitops-release@v3
+        uses: denispalnitsky/gitops-release@v7
         with:
           file: "release.yaml"
           key: "myServiceImageTag"
