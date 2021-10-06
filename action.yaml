@@ -39,5 +39,5 @@ runs:
     - run: ${{ github.action_path }}/run.sh "${{ inputs.filename }}" "${{ inputs.key }}" "${{ inputs.value }}" "${{ inputs.github-token }}" "${{ inputs.github-org-and-repo }}"
       shell: bash       
       env:
-        GITHUB_USERNAME: ${{ input.github-username }}
-        GITHUB_USER_EMAIL: ${{ input.github-user-mail }}
+        GITHUB_USERNAME: ${{ inputs.github-username }}
+        GITHUB_USER_EMAIL: ${{ inputs.github-user-mail }}
