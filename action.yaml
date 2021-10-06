@@ -5,7 +5,7 @@ inputs:
     description: 'Filename to update'
     required: true
   key:  
-    description: "The key to update. Key a string before the colon. Usually it's yaml key like `this-is-key: value`"
+    description: "The key to update. Key is a string before the colon. Usually it's yaml key like `this-is-key: value`"
     required: true
   value:  
     description: "The value to set"
@@ -13,12 +13,28 @@ inputs:
   github-token:  
     description: "Github token to clone and commit target repository"
     required: true
+  
   github-org-and-repo:  
     description: "Target organization and repository in form of `some-org/repo`"
     required: true
+
+  github-username:  
+    description: "Username of a user that will make a commit`"
+    required: false
+    default: 'Gitops Release User'
+
+
+  github-user-mail:  
+    description: "Email of a user that will make a commit`"
+    required: false
+    default: 'gitops-release@github.com'
+    
 
 runs:
   using: "composite"
   steps:        
     - run: ${{ github.action_path }}/run.sh "${{ inputs.filename }}" "${{ inputs.key }}" "${{ inputs.value }}" "${{ inputs.github-token }}" "${{ inputs.github-org-and-repo }}"
-      shell: bash
+      shell: bash       
+      with:
+        github_username: { input.github_username }
+        github_email: { input.github_email }
