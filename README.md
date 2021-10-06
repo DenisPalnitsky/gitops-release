@@ -38,7 +38,7 @@ Optionally, you can provide github username and email that will be used to commi
           value: '${{ github.ref }}
           github-token: ${{ secrets.GIT_ACCESS_TOKEN }}
           github-org-and-repo:  "myorg/infra-as-code-repo"
-          github-user-mail: gitops-user
+          github-username: gitops-user
           github-user-mail: bot@example.com
 
 ```
