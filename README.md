@@ -1,8 +1,6 @@
 # gitops-release
 
-Github action that updates a single key in other github repository
-
-
+Github action to update yaml files inside another github repository
 
 
 
