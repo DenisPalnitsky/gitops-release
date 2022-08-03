@@ -1,8 +1,8 @@
 #!/bin/sh -l
 set -e
 
-git config --global user.email  $GITHUB_USERNAME
-git config --global user.name $GITHUB_USER_EMAIL
+git config --global user.email $GITHUB_USER_EMAIL
+git config --global user.name $GITHUB_USERNAME
 git clone https://$4@github.com/$5.git  $RUNNER_TEMP/infra-as-code-repo
 wget https://raw.githubusercontent.com/DenisPalnitsky/gitops-release/master/replace-key.py
 python replace-key.py --file $RUNNER_TEMP/infra-as-code-repo/$1 --key $2 --value $3
